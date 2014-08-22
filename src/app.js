@@ -1,58 +1,84 @@
-/**
- * Welcome to Pebble.js!
- *
- * This is where you write your app.
- */
-
+// Require libs
 var UI = require('ui');
 var Vector2 = require('vector2');
+var ajax = require('ajax');
+var Vibe = require('ui/vibe');
 
-var main = new UI.Card({
-  title: 'Pebble.js',
-  icon: 'images/menu_icon.png',
-  subtitle: 'Hello World!',
-  body: 'Press any button.'
+// Variables
+var loading_window = new UI.Window();
+var info_text = new UI.Text({
+	position: new Vector2(0, 50),
+	size: new Vector2(144, 30),
+	font: 'gothic-24-bold',
+	text: 'Loading...',
+	textAlign: 'center'
 });
 
-main.show();
+var locationOptions = {"timeout": 15000, "maximumAge": 30000,
+                       "enableHighAccuracy": true};
 
-main.on('click', 'up', function(e) {
-  var menu = new UI.Menu({
-    sections: [{
-      items: [{
-        title: 'Pebble.js',
-        icon: 'images/menu_icon.png',
-        subtitle: 'Can do Menus'
-      }, {
-        title: 'Second Item',
-        subtitle: 'Subtitle Text'
-      }]
-    }]
-  });
+function locationSuccess(pos) {
+  console.log(JSON.stringify(pos.coords));
+  fetchUber(pos.coords);
+}
+
+function locationError(err) {
+  console.warn('location error (' + err.code + '): ' + err.message);
+  info_text.text('Can\'t get location.');
+  info_text.font('gothic-18-bold');
+}
+
+function showUber(times) {
+
+  if (times.length === 0) {
+    info_text.text('No cars available');
+    info_text.font('gothic-24-bold');
+    return;
+  }
+
+	var items = [];
+	
+	times.forEach(function(product) {
+		var item = {
+			title: product.display_name,
+			subtitle: 'estimate: ' + (product.estimate / 60 + 1) + ' mins',
+      product_id: product.product_id
+		};
+		items.push(item);
+	});
+
+	var menu = new UI.Menu({
+	  sections: [{
+	    items: items
+	  }]
+	});
+
   menu.on('select', function(e) {
-    console.log('Selected item #' + e.itemIndex + ' of section #' + e.sectionIndex);
-    console.log('The item is titled "' + e.item.title + '"');
+    console.log(JSON.stringify(e));
+    var url = 'uber://?action=setPickup&product_id=' + e.item.product_id +
+              '&pickup=my_location';
+    Pebble.openURL(url);
+    //ajax({url: url});
   });
-  menu.show();
-});
 
-main.on('click', 'select', function(e) {
-  var wind = new UI.Window();
-  var textfield = new UI.Text({
-    position: new Vector2(0, 50),
-    size: new Vector2(144, 30),
-    font: 'gothic-24-bold',
-    text: 'Text Anywhere!',
-    textAlign: 'center'
-  });
-  wind.add(textfield);
-  wind.show();
-});
+	menu.show();
+}
 
-main.on('click', 'down', function(e) {
-  var card = new UI.Card();
-  card.title('A Card');
-  card.subtitle('Is a Window');
-  card.body('The simplest window type in Pebble.js.');
-  card.show();
-});
+function fetchUber(coords) {  
+  coords.latitude = '25.0422206';
+  coords.longitude = '121.53816815';
+	var params = 'latitude=' + coords.latitude + '&longitude=' + coords.longitude;
+	ajax({ url: 'http://uber.ngrok.com/?' + params, type: 'json' },
+	  function(data) {
+      Vibe.vibrate('double');
+	  	showUber(data.times);
+	});
+}
+
+// Init
+(function() {
+	window.navigator.geolocation.watchPosition(locationSuccess,
+		                                         locationError, locationOptions);
+	loading_window.add(info_text);
+	loading_window.show();
+})();
