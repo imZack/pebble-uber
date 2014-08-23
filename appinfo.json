@@ -1,16 +1,16 @@
 {
     "appKeys": {},
     "capabilities": [
-        "location"
+        "location",
+        "configurable"
     ],
     "companyName": "yulun",
-    "longName": "Uber",
+    "longName": "Uber Now",
     "projectType": "pebblejs",
     "resources": {
         "media": [
             {
                 "file": "images/menu_icon.png",
-                "menuIcon": true,
                 "name": "IMAGE_MENU_ICON",
                 "type": "png"
             },
@@ -28,10 +28,16 @@
                 "file": "fonts/UbuntuMono-Regular.ttf",
                 "name": "MONO_FONT_14",
                 "type": "font"
+            },
+            {
+                "file": "images/uber-icon-28.png",
+                "menuIcon": true,
+                "name": "IMAGES_UBER_ICON_28_PNG",
+                "type": "png"
             }
         ]
     },
-    "shortName": "Uber",
+    "shortName": "Uber Now",
     "uuid": "6042f1f3-b387-45f4-a288-e0db3cc15e68",
     "versionCode": 1,
     "versionLabel": "1.0",

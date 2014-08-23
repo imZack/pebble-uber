@@ -13,6 +13,8 @@ var info_text = new UI.Text({
 	text: 'Loading...',
 	textAlign: 'center'
 });
+var logo = new UI.Card();
+logo.banner("resources/uber-icon-28.png");
 
 var locationOptions = {"timeout": 15000, "maximumAge": 30000,
                        "enableHighAccuracy": true};
@@ -28,6 +30,8 @@ function locationError(err) {
   info_text.font('gothic-18-bold');
 }
 
+var config_url = "";
+
 function showUber(times) {
 
   if (times.length === 0) {
@@ -41,7 +45,7 @@ function showUber(times) {
 	times.forEach(function(product) {
 		var item = {
 			title: product.display_name,
-			subtitle: 'estimate: ' + (product.estimate / 60 + 1) + ' mins',
+			subtitle: 'estimate: ' + Math.ceil(product.estimate / 60 + 1) + ' mins',
       product_id: product.product_id
 		};
 		items.push(item);
@@ -54,11 +58,17 @@ function showUber(times) {
 	});
 
   menu.on('select', function(e) {
-    console.log(JSON.stringify(e));
+    console.log(JSON.stringify(e.item));
     var url = 'uber://?action=setPickup&product_id=' + e.item.product_id +
               '&pickup=my_location';
-    Pebble.openURL(url);
-    //ajax({url: url});
+    config_url = url;
+    console.log(config_url);
+  });
+
+  menu.on('click', 'back', function() {
+    console.log('menu back');
+    window.navigator.geolocation.watchPosition(locationSuccess,
+                                               locationError, locationOptions);
   });
 
 	menu.show();
@@ -70,15 +80,30 @@ function fetchUber(coords) {
 	var params = 'latitude=' + coords.latitude + '&longitude=' + coords.longitude;
 	ajax({ url: 'http://uber.ngrok.com/?' + params, type: 'json' },
 	  function(data) {
+      info_text.text('Uber Now');
+      info_text.font('gothic-24-bold');
       Vibe.vibrate('double');
 	  	showUber(data.times);
 	});
 }
 
+Pebble.addEventListener("showConfiguration", function() {
+  Pebble.openURL(config_url);
+});
+
+loading_window.on('click', 'up', update);
+loading_window.on('click', 'down', update);
+loading_window.on('click', 'select', update);
+
+function update() {
+  info_text.text('Loading...');
+  info_text.font('gothic-24-bold');
+  window.navigator.geolocation.watchPosition(locationSuccess,
+                                             locationError, locationOptions);
+}
+
 // Init
-(function() {
-	window.navigator.geolocation.watchPosition(locationSuccess,
-		                                         locationError, locationOptions);
-	loading_window.add(info_text);
-	loading_window.show();
-})();
+loading_window.add(info_text);
+loading_window.add(logo);
+loading_window.show();
+//update();
