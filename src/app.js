@@ -5,16 +5,23 @@ var ajax = require('ajax');
 var Vibe = require('ui/vibe');
 
 // Variables
-var loading_window = new UI.Window();
+var config_url = "";
+var main_window = new UI.Window();
 var info_text = new UI.Text({
 	position: new Vector2(0, 50),
 	size: new Vector2(144, 30),
 	font: 'gothic-24-bold',
-	text: 'Loading...',
+	text: 'Uber Now',
 	textAlign: 'center'
 });
-var logo = new UI.Card();
-logo.banner("resources/uber-icon-28.png");
+
+var anykey_text = new UI.Text({
+  position: new Vector2(0, 114),
+  size: new Vector2(144, 30),
+  font: 'gothic-14-bold',
+  text: 'Press any key to update',
+  textAlign: 'center'
+});
 
 var locationOptions = {"timeout": 15000, "maximumAge": 30000,
                        "enableHighAccuracy": true};
@@ -30,8 +37,6 @@ function locationError(err) {
   info_text.font('gothic-18-bold');
 }
 
-var config_url = "";
-
 function showUber(times) {
 
   if (times.length === 0) {
@@ -45,7 +50,8 @@ function showUber(times) {
 	times.forEach(function(product) {
 		var item = {
 			title: product.display_name,
-			subtitle: 'estimate: ' + Math.ceil(product.estimate / 60 + 1) + ' mins',
+			subtitle: 'pick up time: ' +
+                Math.ceil(product.estimate / 60 + 1) + ' mins',
       product_id: product.product_id
 		};
 		items.push(item);
@@ -74,36 +80,40 @@ function showUber(times) {
 	menu.show();
 }
 
-function fetchUber(coords) {  
-  coords.latitude = '25.0422206';
-  coords.longitude = '121.53816815';
-	var params = 'latitude=' + coords.latitude + '&longitude=' + coords.longitude;
-	ajax({ url: 'http://uber.ngrok.com/?' + params, type: 'json' },
+function fetchUber(coords) {
+	var params = 'latitude=' + coords.latitude +
+               '&longitude=' + coords.longitude;
+	ajax({ url: 'http://pebble-uber.yulun.me/?' + params, type: 'json' },
 	  function(data) {
       info_text.text('Uber Now');
       info_text.font('gothic-24-bold');
       Vibe.vibrate('double');
 	  	showUber(data.times);
-	});
+  	},
+    function() {
+      info_text.text('Connection Error');
+      info_text.font('gothic-18-bold');
+    }
+  );
+}
+
+function update() {
+  info_text.text('Updating...');
+  info_text.font('gothic-24-bold');
+  window.navigator.geolocation.watchPosition(locationSuccess,
+                                             locationError, locationOptions);
 }
 
 Pebble.addEventListener("showConfiguration", function() {
   Pebble.openURL(config_url);
 });
 
-loading_window.on('click', 'up', update);
-loading_window.on('click', 'down', update);
-loading_window.on('click', 'select', update);
-
-function update() {
-  info_text.text('Loading...');
-  info_text.font('gothic-24-bold');
-  window.navigator.geolocation.watchPosition(locationSuccess,
-                                             locationError, locationOptions);
-}
+main_window.on('click', 'up', update);
+main_window.on('click', 'down', update);
+main_window.on('click', 'select', update);
 
 // Init
-loading_window.add(info_text);
-loading_window.add(logo);
-loading_window.show();
-//update();
+main_window.add(anykey_text);
+main_window.add(info_text);
+main_window.show();
+update();
