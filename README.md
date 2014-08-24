@@ -8,9 +8,7 @@ The backend is serving at [http://pebble-uber.yulun.me](http://pebble-uber.yulun
 Screenshot
 ----------
 ![1](https://cloud.githubusercontent.com/assets/690703/4021109/eae078ce-2ae1-11e4-9e94-cdf370279475.png) .
-![2](https://cloud.githubusercontent.com/assets/690703/4021107/eade6bec-2ae1-11e4-8c28-6b7b1507cbda.png) .
-![3](https://cloud.githubusercontent.com/assets/690703/4021108/eade65de-2ae1-11e4-80ac-bbee3c826581.png) .
-![4](https://cloud.githubusercontent.com/assets/690703/4021106/eabf6468-2ae1-11e4-9893-26bfdfda2451.png) . 
+![2](https://cloud.githubusercontent.com/assets/690703/4021107/eade6bec-2ae1-11e4-8c28-6b7b1507cbda.png)
 
 Get PWB
 -------
