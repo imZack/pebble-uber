@@ -3,7 +3,7 @@ Uber Now
 
 This project is written with [PebbleJS](https://github.com/pebble/pebblejs) on [CloudPebble](https://cloudpebble.net/). Just import this repo into your projects!
 
-The backend is serving at http://pebble-uber.yulun.me by default, you could also host your own server! see [backend's repository](https://github.com/imZack/pebble-uber-backend)
+The backend is serving at [http://pebble-uber.yulun.me](http://pebble-uber.yulun.me/?latitude=37.787330&longitude=-122.403871) by default, you could also host your own server! see [backend's repository](https://github.com/imZack/pebble-uber-backend)
 
 Screenshot
 ----------
