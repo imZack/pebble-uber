@@ -11,11 +11,25 @@ Screenshot
 ![1](https://cloud.githubusercontent.com/assets/690703/4021109/eae078ce-2ae1-11e4-9e94-cdf370279475.png) .
 ![2](https://cloud.githubusercontent.com/assets/690703/4021107/eade6bec-2ae1-11e4-8c28-6b7b1507cbda.png)
 
-Get PWB
--------
-![](http://chart.apis.google.com/chart?chs=200x200&cht=qr&chld=|1&chl=https%3A%2F%2Fgithub.com%2FimZack%2Fpebble-uber%2Freleases%2Fdownload%2Fv1.0%2FUber_Now.pbw)
+
+Download
+--------
+
+- Pebble App Store
+
+<a href="pebble://appstore/53f8aeecfa4b5cd3bd00017a">
+  <img src="http://pblweb.com/badge/53f8aeecfa4b5cd3bd00017a/orange/medium/" alt="Uber Now is available on the Pebble appstore" />
+</a>
+
+![](http://chart.apis.google.com/chart?chs=200x200&cht=qr&chld=|1&chl=https://apps.getpebble.com/applications/53f8aeecfa4b5cd3bd00017a)
+
+- PWB
 
 [Download](https://github.com/imZack/pebble-uber/releases/download/v1.0/Uber_Now.pbw)
+
+![](http://chart.apis.google.com/chart?chs=200x200&cht=qr&chld=|1&chl=https%3A%2F%2Fgithub.com%2FimZack%2Fpebble-uber%2Freleases%2Fdownload%2Fv1.0%2FUber_Now.pbw)
+
+
 
 Reference
 ---------
