@@ -17,11 +17,9 @@ Download
 
 - Pebble App Store
 
-<a href="pebble://appstore/53f8aeecfa4b5cd3bd00017a">
-  <img src="http://pblweb.com/badge/53f8aeecfa4b5cd3bd00017a/orange/medium/" alt="Uber Now is available on the Pebble appstore" />
-</a>
+[![](http://pblweb.com/badge/53f8aeecfa4b5cd3bd00017a/orange/medium/)](https://apps.getpebble.com/applications/53f8aeecfa4b5cd3bd00017a)
 
-![](http://chart.apis.google.com/chart?chs=200x200&cht=qr&chld=|1&chl=https://apps.getpebble.com/applications/53f8aeecfa4b5cd3bd00017a)
+[![](http://chart.apis.google.com/chart?chs=200x200&cht=qr&chld=|1&chl=https://apps.getpebble.com/applications/53f8aeecfa4b5cd3bd00017a)](https://apps.getpebble.com/applications/53f8aeecfa4b5cd3bd00017a)
 
 - PWB [Download](https://github.com/imZack/pebble-uber/releases/download/v1.0/Uber_Now.pbw)
 
