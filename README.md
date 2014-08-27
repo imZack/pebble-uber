@@ -17,7 +17,7 @@ Screenshot
 Download
 --------
 
-- Pebble App Store
+- Pebble App Store [Link](https://apps.getpebble.com/applications/53f8aeecfa4b5cd3bd00017a)
 
 [![](http://pblweb.com/badge/53f8aeecfa4b5cd3bd00017a/orange/medium/)](https://apps.getpebble.com/applications/53f8aeecfa4b5cd3bd00017a)
 
