@@ -46,10 +46,14 @@ function showUber(times) {
   }
 
 	var items = [];
-	
 	times.forEach(function(product) {
+    product.surge_multiplier = product.surge_multiplier || 1;
+    var title = product.display_name;
+    if (product.surge_multiplier !== 1) {
+      title += ' x ' + Number(product.surge_multiplier).toFixed(2);
+    }
 		var item = {
-			title: product.display_name,
+			title: title,
 			subtitle: 'pick up time: ' +
                 Math.ceil(product.estimate / 60 + 1) + ' mins',
       product_id: product.product_id
