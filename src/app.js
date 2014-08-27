@@ -55,7 +55,7 @@ function showUber(times) {
 		var item = {
 			title: title,
 			subtitle: 'pick up time: ' +
-                Math.ceil(product.estimate / 60 + 1) + ' mins',
+                Math.ceil(product.estimate / 60) + ' mins',
       product_id: product.product_id
 		};
 		items.push(item);
