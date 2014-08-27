@@ -50,7 +50,7 @@ function showUber(times) {
     product.surge_multiplier = product.surge_multiplier || 1;
     var title = product.display_name;
     if (product.surge_multiplier !== 1) {
-      title += ' x ' + Number(product.surge_multiplier).toFixed(2);
+      title += ' *' + Number(product.surge_multiplier).toFixed(2);
     }
 		var item = {
 			title: title,
