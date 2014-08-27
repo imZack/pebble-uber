@@ -23,7 +23,7 @@ Download
 
 [![](http://chart.apis.google.com/chart?chs=200x200&cht=qr&chld=|1&chl=https://apps.getpebble.com/applications/53f8aeecfa4b5cd3bd00017a)](https://apps.getpebble.com/applications/53f8aeecfa4b5cd3bd00017a)
 
-- PWB [Download](https://github.com/imZack/pebble-uber/releases/download/v1.0/Uber_Now.pbw)
+- PWB [Download](https://github.com/imZack/pebble-uber/releases/download/v1.3/Uber_Now.v1.3.pbw)
 
 
 Reference
