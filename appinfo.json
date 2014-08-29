@@ -9,6 +9,71 @@
     "resources": {
         "media": [
             {
+                "file": "images/menu_icon.png",
+                "name": "IMAGE_MENU_ICON",
+                "type": "png"
+            },
+            {
+                "file": "images/logo_splash.png",
+                "name": "IMAGE_LOGO_SPLASH",
+                "type": "png"
+            },
+            {
+                "file": "images/tile_splash.png",
+                "name": "IMAGE_TILE_SPLASH",
+                "type": "png"
+            },
+            {
+                "file": "fonts/UbuntuMono-Regular.ttf",
+                "name": "MONO_FONT_14",
+                "type": "font"
+            },
+            {
+                "file": "images/mono-taxi.png",
+                "name": "IMAGES_MONO_TAXI_PNG",
+                "type": "png"
+            },
+            {
+                "file": "images/mono-uberxl2.png",
+                "name": "IMAGES_MONO_UBERXL2_PNG",
+                "type": "png"
+            },
+            {
+                "file": "images/mono-uberx.png",
+                "name": "IMAGES_MONO_UBERX_PNG",
+                "type": "png"
+            },
+            {
+                "file": "images/mono-suv.png",
+                "name": "IMAGES_MONO_SUV_PNG",
+                "type": "png"
+            },
+            {
+                "file": "images/mono-pop2.png",
+                "name": "IMAGES_MONO_POP2_PNG",
+                "type": "png"
+            },
+            {
+                "file": "images/mono-nytaxi4.png",
+                "name": "IMAGES_MONO_NYTAXI4_PNG",
+                "type": "png"
+            },
+            {
+                "file": "images/mono-blacktaxi2.png",
+                "name": "IMAGES_MONO_BLACKTAXI2_PNG",
+                "type": "png"
+            },
+            {
+                "file": "images/mono-black.png",
+                "name": "IMAGES_MONO_BLACK_PNG",
+                "type": "png"
+            },
+            {
+                "file": "images/mono-lux.png",
+                "name": "IMAGES_MONO_LUX_PNG",
+                "type": "png"
+            },
+            {
                 "file": "images/uber-icon-28.png",
                 "menuIcon": true,
                 "name": "IMAGES_UBER_ICON_28_PNG",
