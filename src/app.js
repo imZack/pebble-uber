@@ -116,8 +116,6 @@ function showUber(data) {
 }
 
 function fetchUber(coords) {
-  coords.latitude = '40.769625';
-  coords.longitude = '-73.971137';
   var params = 'latitude=' + coords.latitude +
                '&longitude=' + coords.longitude +
                '&demo=1';
