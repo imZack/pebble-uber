@@ -9,6 +9,51 @@
     "resources": {
         "media": [
             {
+                "file": "images/mono-taxi.png",
+                "name": "IMAGES_MONO_TAXI_PNG",
+                "type": "png"
+            },
+            {
+                "file": "images/mono-uberxl2.png",
+                "name": "IMAGES_MONO_UBERXL2_PNG",
+                "type": "png"
+            },
+            {
+                "file": "images/mono-uberx.png",
+                "name": "IMAGES_MONO_UBERX_PNG",
+                "type": "png"
+            },
+            {
+                "file": "images/mono-suv.png",
+                "name": "IMAGES_MONO_SUV_PNG",
+                "type": "png"
+            },
+            {
+                "file": "images/mono-pop2.png",
+                "name": "IMAGES_MONO_POP2_PNG",
+                "type": "png"
+            },
+            {
+                "file": "images/mono-nytaxi4.png",
+                "name": "IMAGES_MONO_NYTAXI4_PNG",
+                "type": "png"
+            },
+            {
+                "file": "images/mono-blacktaxi2.png",
+                "name": "IMAGES_MONO_BLACKTAXI2_PNG",
+                "type": "png"
+            },
+            {
+                "file": "images/mono-black.png",
+                "name": "IMAGES_MONO_BLACK_PNG",
+                "type": "png"
+            },
+            {
+                "file": "images/mono-lux.png",
+                "name": "IMAGES_MONO_LUX_PNG",
+                "type": "png"
+            },
+            {
                 "file": "images/uber-icon-28.png",
                 "menuIcon": true,
                 "name": "IMAGES_UBER_ICON_28_PNG",
@@ -18,8 +63,8 @@
     },
     "shortName": "Uber Now",
     "uuid": "6042f1f3-b387-45f4-a288-e0db3cc15e68",
-    "versionCode": 4,
-    "versionLabel": "1.4",
+    "versionCode": 5,
+    "versionLabel": "2.0",
     "watchapp": {
         "watchface": false
     }
