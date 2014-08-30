@@ -1,11 +1,17 @@
-// Require libs
+/* Require libs */
 var UI = require('ui');
 var Vector2 = require('vector2');
 var ajax = require('ajax');
 var Vibe = require('ui/vibe');
 
-// Variables
+
+/* Variables */
 var isUpdating = false;
+var locationOptions = {"timeout": 15000, "maximumAge": 30000,
+                       "enableHighAccuracy": true};
+
+
+/* UI Elements */
 var main_window = new UI.Window();
 var info_text = new UI.Text({
   position: new Vector2(0, 50),
@@ -14,8 +20,16 @@ var info_text = new UI.Text({
   text: 'Uber Now',
   textAlign: 'center'
 });
+var anykey_text = new UI.Text({
+  position: new Vector2(0, 114),
+  size: new Vector2(144, 30),
+  font: 'gothic-14-bold',
+  text: 'Press any key to update',
+  textAlign: 'center'
+});
 
-// Image Mapping List
+
+/* Image Mapping List */
 var image_list = {
   uberx: "images/mono-uberx.png",
   uberxl: "images/mono-uberxl2.png",
@@ -26,16 +40,6 @@ var image_list = {
   ubert: "images/mono-nytaxi4.png"
 };
 
-var anykey_text = new UI.Text({
-  position: new Vector2(0, 114),
-  size: new Vector2(144, 30),
-  font: 'gothic-14-bold',
-  text: 'Press any key to update',
-  textAlign: 'center'
-});
-
-var locationOptions = {"timeout": 15000, "maximumAge": 30000,
-                       "enableHighAccuracy": true};
 
 function locationSuccess(pos) {
   console.log(JSON.stringify(pos.coords));
