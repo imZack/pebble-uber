@@ -63,8 +63,8 @@
     },
     "shortName": "Uber Now",
     "uuid": "6042f1f3-b387-45f4-a288-e0db3cc15e68",
-    "versionCode": 4,
-    "versionLabel": "1.4",
+    "versionCode": 5,
+    "versionLabel": "2.0",
     "watchapp": {
         "watchface": false
     }
