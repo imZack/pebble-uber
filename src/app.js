@@ -6,6 +6,7 @@ var Vibe = require('ui/vibe');
 
 
 /* Variables */
+var APP_VERSION = "v2.0";
 var isUpdating = false;
 var locationOptions = {"timeout": 15000, "maximumAge": 30000,
                        "enableHighAccuracy": true};
@@ -118,7 +119,7 @@ function showUber(data) {
 function fetchUber(coords) {
   var params = 'latitude=' + coords.latitude +
                '&longitude=' + coords.longitude +
-               '&demo=1';
+               '&pebble=' + APP_VERSION;
   ajax({ url: 'http://pebble-uber.yulun.me/?' + params, type: 'json' },
     function(data) {
       info_text.text('Uber Now');
