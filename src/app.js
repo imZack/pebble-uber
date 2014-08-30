@@ -64,7 +64,7 @@ function showUber(data) {
     info_text.font('gothic-24-bold');
     return;
   } else if (data.is_available === false) {
-    info_text.text('Currently not available in this area');
+    info_text.text('No cars available');
     info_text.font('gothic-24-bold');
     return;
   }
