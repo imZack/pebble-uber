@@ -3,7 +3,8 @@ var UI = require('ui');
 var Vector2 = require('vector2');
 var ajax = require('ajax');
 var Vibe = require('ui/vibe');
-
+var Accel = require('ui/accel');
+Accel.init();
 
 /* Variables */
 var APP_VERSION = "v2.0";
@@ -139,7 +140,7 @@ function fetchUber(coords) {
 function update() {
   if (isUpdating) return;
   isUpdating = true;
-  info_text.text('Updating...');
+  info_text.text('Searching...');
   info_text.font('gothic-24-bold');
   window.navigator.geolocation.getCurrentPosition(locationSuccess,
                                                   locationError,
@@ -149,6 +150,7 @@ function update() {
 main_window.on('click', 'up', update);
 main_window.on('click', 'down', update);
 main_window.on('click', 'select', update);
+Accel.on('tap', update);
 
 // Init
 main_window.add(anykey_text);
