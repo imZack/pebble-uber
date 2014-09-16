@@ -1,6 +1,8 @@
 Uber Now
 ========
-![10592979_10203184383992759_3074174144251561853_n](https://cloud.githubusercontent.com/assets/690703/4030216/a6fc3b00-2c5a-11e4-913c-6d8d632684b9.jpg)
+[![2014-8-30 13 10 17](https://cloud.githubusercontent.com/assets/690703/4098505/f857572c-3025-11e4-8335-aa5ff371e210.jpg)](https://cloud.githubusercontent.com/assets/690703/4098516/8cfc661a-3026-11e4-94ec-e872c27ec2f2.jpg)&nbsp;
+[![2014-8-30 13 11 12-2](https://cloud.githubusercontent.com/assets/690703/4098498/54b07842-3025-11e4-84d2-7c2cdda15524.jpg)
+](https://cloud.githubusercontent.com/assets/690703/4098515/82681c44-3026-11e4-871f-2b78b477bd3d.jpg)
 
 This project is written with [PebbleJS](https://github.com/pebble/pebblejs) on [CloudPebble](https://cloudpebble.net/). Just import this repo into your projects!
 
@@ -8,7 +10,7 @@ The backend is serving at [http://pebble-uber.yulun.me](http://pebble-uber.yulun
 
 [![](http://pblweb.com/badge/53f8aeecfa4b5cd3bd00017a/black/medium/)](https://apps.getpebble.com/applications/53f8aeecfa4b5cd3bd00017a)
 
-Any feature requests is welcome:ok_hand: , please [create a new issue](https://github.com/imZack/pebble-uber/issues/new)
+Any feature request is welcome:ok_hand: , please [create a new issue](https://github.com/imZack/pebble-uber/issues/new)
 
 Screenshot
 ----------
@@ -21,7 +23,7 @@ Screenshot
 ![ubertaxi](https://cloud.githubusercontent.com/assets/690703/4098154/d226302a-3005-11e4-9b34-fa5967811e14.png)&nbsp;
 ![uberlux](https://cloud.githubusercontent.com/assets/690703/4098151/d20c902a-3005-11e4-9ea0-518800ed9d59.png)&nbsp;
 
-More screenshots could be found [Link](https://github.com/imZack/pebble-uber/issues/1)
+More screenshots could be found [Here](https://github.com/imZack/pebble-uber/issues/1)
 
 Download
 --------
