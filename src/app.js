@@ -9,6 +9,7 @@ Accel.init();
 /* Variables */
 var APP_VERSION = "v2.1";
 var isUpdating = false;
+var lastUpdate = (new Date).getTime();
 var locationOptions = {"timeout": 15000, "maximumAge": 30000,
                        "enableHighAccuracy": true};
 
@@ -127,6 +128,7 @@ function fetchUber(coords) {
       info_text.font('gothic-24-bold');
       Vibe.vibrate('double');
       showUber(data);
+      lastUpdate = (new Date).getTime();
       isUpdating = false;
     },
     function() {
@@ -138,7 +140,8 @@ function fetchUber(coords) {
 }
 
 function update() {
-  if (isUpdating) return;
+  var diffTime = Math.abs(lastUpdate - (new Date).getTime());
+  if (diffTime <= 1000  || isUpdating) return;
   isUpdating = true;
   info_text.text('Searching...');
   info_text.font('gothic-24-bold');
