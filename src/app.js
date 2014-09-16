@@ -139,9 +139,9 @@ function fetchUber(coords) {
   );
 }
 
-function update() {
+function update(force) {
   var diffTime = Math.abs(lastUpdate - (new Date).getTime());
-  if (diffTime <= 1000  || isUpdating) return;
+  if (!!force || diffTime <= 1000  || isUpdating) return;
   isUpdating = true;
   info_text.text('Searching...');
   info_text.font('gothic-24-bold');
@@ -159,4 +159,4 @@ Accel.on('tap', update);
 main_window.add(anykey_text);
 main_window.add(info_text);
 main_window.show();
-update();
+update(true);
