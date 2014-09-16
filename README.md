@@ -32,7 +32,7 @@ Download
 
 [![](http://chart.apis.google.com/chart?chs=200x200&cht=qr&chld=|1&chl=https://apps.getpebble.com/applications/53f8aeecfa4b5cd3bd00017a)](https://apps.getpebble.com/applications/53f8aeecfa4b5cd3bd00017a)
 
-**Latest PWB** [Download](https://github.com/imZack/pebble-uber/releases/download/v2.0/Uber_Now.v2.1.pbw)
+**Latest PWB** [Download](https://github.com/imZack/pebble-uber/releases/download/v2.2/Uber_Now.v2.2.pbw)
 
 
 Reference
