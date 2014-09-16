@@ -7,7 +7,7 @@ var Accel = require('ui/accel');
 Accel.init();
 
 /* Variables */
-var APP_VERSION = "v2.0";
+var APP_VERSION = "v2.1";
 var isUpdating = false;
 var locationOptions = {"timeout": 15000, "maximumAge": 30000,
                        "enableHighAccuracy": true};
