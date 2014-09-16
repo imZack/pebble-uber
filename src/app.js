@@ -141,7 +141,7 @@ function fetchUber(coords) {
 
 function update(force) {
   var diffTime = Math.abs(lastUpdate - (new Date).getTime());
-  if (!!force || diffTime <= 1000  || isUpdating) return;
+  if (!!!force || diffTime <= 1000  || isUpdating) return;
   isUpdating = true;
   info_text.text('Searching...');
   info_text.font('gothic-24-bold');
