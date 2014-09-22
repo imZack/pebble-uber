@@ -131,8 +131,12 @@ function fetchUber(coords) {
       lastUpdate = (new Date).getTime();
       isUpdating = false;
     },
-    function() {
-      info_text.text('Connection Error');
+    function(error) {
+      if (error.message) {
+        info_text.text(error.message);
+      } else {
+        info_text.text('Connection Error');
+      }
       info_text.font('gothic-18-bold');
       isUpdating = false;
     }
